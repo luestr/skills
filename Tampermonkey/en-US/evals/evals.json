@@ -1,0 +1,46 @@
+{
+  "skill_name": "tampermonkey-userscript-authoring",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write a Tampermonkey userscript that adds an accessible action panel to product pages at https://shop.example.com/products/* only. The panel must be inserted next to [data-product-actions], have a keyboard-usable button, avoid duplicate insertion when the script is re-entered, read the product id safely from the DOM, log a diagnostic and return without throwing when the host is missing, and show a visible error state when the product id is missing or invalid. Use the smallest possible metadata and explain why each metadata line is present.",
+      "expected_output": "A self-contained JavaScript userscript with precise @match metadata, @grant none unless a privileged API is truly used, a stable data marker, idempotent DOM reconciliation, accessible controls, textContent-based output, bounded input validation, and a clear user-visible error state for a missing or invalid product id. When the host is missing, the script should log a diagnostic and return without throwing. The answer should state that the browser APIs used do not require a Tampermonkey grant.",
+      "expectations": [
+        "The metadata contains an exact https://shop.example.com/products/* @match and does not use a wildcard host or @include *.",
+        "The script declares @grant none or declares only grants for APIs it actually calls.",
+        "The panel is inserted as the adjacent sibling of [data-product-actions] using adjacent insertion such as host.insertAdjacentElement('afterend', panel), has a stable script-owned marker, and a second execution cannot create a second panel or duplicate click listener.",
+        "The action uses a button element with type=\"button\", non-empty textContent, and native keyboard button behavior without tabindex=\"-1\".",
+        "The product id is read from data-product-id or dataset.productId, accepted only when it is a string with length 1 through 100, and inserted with textContent; the untrusted id is never assigned to innerHTML or insertAdjacentHTML.",
+        "When the host is missing, startup logs a diagnostic and returns without throwing; when the product id is missing or invalid, the panel contains an element with data-state=\"error\" and non-empty textContent."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Write a Tampermonkey userscript for a React-like SPA at https://app.example.com/orders/* that adds an order helper panel inside [data-orders-toolbar]. The application changes routes with pushState and replaceState, renders the toolbar asynchronously, replaces portions of the DOM, and supports browser back and forward navigation. The script must reconcile on route changes and DOM changes, remove its panel outside the order route, tolerate a missing toolbar, and avoid duplicate observers, history wrappers, route listeners, panels, and click handlers. Include teardown behavior.",
+      "expected_output": "A complete browser-API userscript with precise SPA metadata and no unnecessary GM grants. It should have a single lifecycle controller or equivalent ownership model, one MutationObserver, one popstate listener, guarded history wrapping, debounced refresh, idempotent panel detection, bounded handling for late DOM rendering, and pagehide cleanup that disconnects and restores owned resources.",
+      "expectations": [
+        "The metadata matches only https://app.example.com/orders/* and does not claim that @run-at means the React application is ready.",
+        "The code contains exactly one new MutationObserver call, observes document.documentElement with childList=true and subtree=true, and scheduleRefresh uses one nullable timer to coalesce refreshes.",
+        "Each history wrapper calls original.apply(this, args) and returns the captured result; the script assigns each wrapper once after the sentinel guard and restores a method only when it is still identical to that script's wrapper.",
+        "The script registers window.addEventListener(\"popstate\", scheduleRefresh), removes the panel when location.pathname does not start with /orders/, and removes that same listener during teardown.",
+        "The panel has the exact marker data-tm-spa-enhancement, refresh checks querySelector for that marker before appending, and refresh does not register a new click listener.",
+        "Before installing an observer, listener, or history wrapper, the entry point checks window.__tmSpaEnhancementInstance__?.active === true and returns; it assigns that sentinel an active=true record containing stop before setup and deletes its own record during stop().",
+        "The script has a stop() teardown that sets running=false, clears refreshTimer, calls observer.disconnect(), removes popstate and pagehide listeners, restores owned pushState and replaceState methods, and removes the marked panel."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Write a Tampermonkey userscript for https://app.example.com/dashboard/* that loads a JSON summary from https://api.example.com/v1/summary and displays it in a safe data panel. The request must use an approved Tampermonkey API, declare the exact @connect host, validate HTTP status and JSON shape, handle timeout, abort, transport error, and malformed responses, and show recoverable user-visible states. Store only a non-sensitive compact-view setting in Tampermonkey storage. Do not expose credentials, tokens, cookies, or privileged functions to page scripts.",
+      "expected_output": "A self-contained userscript with exact @match, @grant GM_xmlhttpRequest, @grant GM_getValue, @grant GM_setValue, and @connect api.example.com metadata as applicable. It should construct the fixed API URL, validate the response before rendering with safe DOM APIs, keep and abort the request handle on teardown, validate persisted settings, and explain that authentication and secrets require a separately reviewed design.",
+      "expectations": [
+        "The metadata contains the exact line @connect api.example.com, and the request URL is created as https://api.example.com/v1/summary or is rejected unless url.origin === \"https://api.example.com\" and url.pathname === \"/v1/summary\".",
+        "The metadata contains @grant GM_xmlhttpRequest, @grant GM_getValue, and @grant GM_setValue, and contains no wildcard @connect or unrelated privileged grant.",
+        "The onload handler renders data only after checking 200 <= response.status < 300, JSON.parse(response.responseText) succeeds, and the parsed value has an integer count between 0 and 100000.",
+        "The request defines onerror, ontimeout, and onabort callbacks; onerror and ontimeout render a panel element with data-state=\"error\" and non-empty textContent, while onabort clears the active handle without rendering a stale success result.",
+        "loadSummary returns without calling GM_xmlhttpRequest when requestHandle !== null, assigns the returned handle only for the current request generation, and pagehide increments that generation and calls abort() on the active handle.",
+        "GM_getValue(settingsKey, false) accepts only a boolean compact setting and falls back to false; a GM_setValue exception is caught, logged with console.error, and leaves the previous compact UI state unchanged.",
+        "The request metadata, URL, headers, DOM text, and logs contain no Authorization or Cookie value and no credential, token, password, or session secret is copied into page data or privileged function references."
+      ]
+    }
+  ]
+}

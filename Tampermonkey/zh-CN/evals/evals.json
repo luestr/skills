@@ -1,0 +1,46 @@
+{
+  "skill_name": "tampermonkey-userscript-authoring",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "编写一个 Tampermonkey 用户脚本，仅在 https://shop.example.com/products/* 产品页面添加可访问的操作面板。面板必须插入 [data-product-actions] 旁边，包含可使用键盘操作的按钮，在脚本重新进入时避免重复插入，安全地从 DOM 读取产品 ID；宿主缺失时记录诊断并返回而不抛出异常，产品 ID 缺失或无效时显示可见的错误状态。使用尽可能少的元数据，并解释每一行元数据存在的原因。",
+      "expected_output": "一个自包含的 JavaScript 用户脚本，使用精确的 @match 元数据；除非确实使用特权 API，否则使用 @grant none；包含稳定的数据标记、幂等的 DOM 调和、可访问控件、基于 textContent 的输出、有界输入验证，以及针对缺失或无效产品 ID 的清晰用户可见错误状态。宿主缺失时，脚本应记录诊断并返回而不抛出异常。答案应说明所用浏览器 API 不需要 Tampermonkey grant。",
+      "expectations": [
+        "元数据包含精确的 https://shop.example.com/products/* @match，并且不使用通配符主机或 @include *。",
+        "脚本声明 @grant none，或只声明实际调用的 API 所需的 grant。",
+        "面板作为 [data-product-actions] 的相邻兄弟节点插入，使用类似 host.insertAdjacentElement('afterend', panel) 的相邻插入方式；它具有稳定的脚本所有标记，第二次执行不会创建第二个面板或重复点击监听器。",
+        "操作使用 type=\"button\" 的 button 元素，textContent 非空，并具有原生键盘按钮行为，不使用 tabindex=\"-1\"。",
+        "产品 ID 从 data-product-id 或 dataset.productId 读取，只有长度为 1 到 100 的字符串才接受，并使用 textContent 插入；不可信 ID 绝不会赋给 innerHTML 或 insertAdjacentHTML。",
+        "宿主缺失时，启动会记录诊断并返回而不抛出异常；产品 ID 缺失或无效时，面板包含 data-state=\"error\" 且 textContent 非空的元素。"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "为 https://app.example.com/orders/* 上类似 React 的 SPA 编写一个 Tampermonkey 用户脚本，在 [data-orders-toolbar] 内添加订单辅助面板。应用使用 pushState 和 replaceState 改变路由，异步渲染工具栏，替换部分 DOM，并支持浏览器后退和前进导航。脚本必须在路由变化和 DOM 变化时进行调和，在订单路由之外移除面板，容忍工具栏缺失，并避免重复观察器、history 包装器、路由监听器、面板和点击处理器。包含 teardown 行为。",
+      "expected_output": "一个完整的、只使用浏览器 API 的用户脚本，具有精确的 SPA 元数据且不声明不必要的 GM grant。它应包含单一生命周期控制器或等价的所有权模型、一个 MutationObserver、一个 popstate 监听器、有保护的 history 包装、有防抖的刷新、幂等的面板检测、对延迟 DOM 渲染进行有界处理，以及通过 pagehide 清理来断开并恢复所有拥有的资源。",
+      "expectations": [
+        "元数据只匹配 https://app.example.com/orders/*，并且没有声称 @run-at 表示 React 应用已就绪。",
+        "代码恰好包含一个新的 MutationObserver 调用，观察 document.documentElement 且 childList=true 和 subtree=true；scheduleRefresh 使用一个可为空的计时器合并刷新。",
+        "每个 history 包装器调用 original.apply(this, args) 并返回捕获的结果；哨兵检查后脚本只分配每个包装器一次，并且仅在方法仍与脚本包装器完全相同时恢复它。",
+        "脚本注册 window.addEventListener(\"popstate\", scheduleRefresh)，当 location.pathname 不以 /orders/ 开头时移除面板，并在 teardown 时移除同一个监听器。",
+        "面板具有精确标记 data-tm-spa-enhancement，refresh 在追加前通过 querySelector 检查该标记，并且 refresh 不注册新的点击监听器。",
+        "在安装观察器、监听器或 history 包装器前，入口检查 window.__tmSpaEnhancementInstance__?.active === true 并返回；设置一个包含 stop 的 active=true 哨兵记录，然后再进行设置，并在 stop() 期间删除自己的记录。",
+        "脚本具有 stop() teardown：设置 running=false，清除 refreshTimer，调用 observer.disconnect()，移除 popstate 和 pagehide 监听器，恢复拥有的 pushState 和 replaceState 方法，并移除带标记的面板。"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "为 https://app.example.com/dashboard/* 编写一个 Tampermonkey 用户脚本，从 https://api.example.com/v1/summary 加载 JSON 摘要并将其显示在安全的数据面板中。请求必须使用获准的 Tampermonkey API，声明精确的 @connect 主机，验证 HTTP 状态和 JSON 形状，处理超时、abort、传输错误和格式错误响应，并显示可恢复的用户可见状态。在 Tampermonkey 存储中只保存非敏感的紧凑视图设置。不要向页面脚本暴露凭据、token、cookies 或特权函数。",
+      "expected_output": "一个自包含的用户脚本，包含精确的 @match、@grant GM_xmlhttpRequest、@grant GM_getValue、@grant GM_setValue 和适用的 @connect api.example.com 元数据。它应构造固定的 API URL，在使用安全 DOM API 渲染前验证响应，保留并在 teardown 时 abort 请求句柄，验证持久化设置，并说明认证和机密需要单独审查的设计。",
+      "expectations": [
+        "元数据包含精确行 @connect api.example.com，并且请求 URL 创建为 https://api.example.com/v1/summary，或除非 url.origin === \"https://api.example.com\" 且 url.pathname === \"/v1/summary\" 否则拒绝。",
+        "元数据包含 @grant GM_xmlhttpRequest、@grant GM_getValue 和 @grant GM_setValue，并且不包含通配符 @connect 或无关的特权 grant。",
+        "onload 处理器只有在检查 200 <= response.status < 300、JSON.parse(response.responseText) 成功，且解析值具有 0 到 100000（含边界）的整数 count 后才渲染数据。",
+        "请求定义 onerror、ontimeout 和 onabort 回调；onerror 和 ontimeout 将 data-state=\"error\" 且 textContent 非空的面板元素渲染出来，而 onabort 清除活动句柄，不渲染过期的成功结果。",
+        "当 requestHandle !== null 时，loadSummary 返回而不调用 GM_xmlhttpRequest；仅当请求代数仍是当前值时才赋值返回句柄；pagehide 增加该代数并对活动句柄调用 abort()。",
+        "GM_getValue(settingsKey, false) 只接受布尔型紧凑设置，并回退到 false；GM_setValue 异常被捕获并以 console.error 记录，同时保留之前的紧凑 UI 状态。",
+        "请求元数据、URL、headers、DOM 文本和日志不包含 Authorization 或 Cookie 值，也不包含 credential、token、password 或 session secret，并且不会将凭据复制到页面数据或特权函数引用中。"
+      ]
+    }
+  ]
+}
