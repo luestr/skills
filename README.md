@@ -11,4 +11,4 @@
 | WriteuBlockOriginFilters | 编写、调试和解释 Adblock Plus (ABP) 过滤规则语法               | [WriteuBlockOriginFilters](/WriteuBlockOriginFilters) |
 | WriteAdblockPlusFilters  | AdGuard 过滤规则语法                                   | [WriteAdblockPlusFilters](/WriteAdblockPlusFilters)   |
 | WriteAdGuardFilters      | 完整的 uBlock Origin (uBO) 静态过滤语法参考                 | [WriteAdGuardFilters](/WriteAdGuardFilters)           |
-| grit                     | git 的 Rust 实现，高性能低开销                             | [grit](/grit)                                                       |
+| grit                     | 指导Agent 如何使用 grit                             | [grit](/grit)                                                       |
