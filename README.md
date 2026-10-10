@@ -7,7 +7,7 @@
 | Lexilla                  | 使用 Lexilla 5.5.1 为 Scintilla 集成、构建、发现和扩展语言 lexer | [Lexilla](/Lexilla)                                                             |
 | Scintilla                | 将 Scintilla.dll 5.6.4 集成到 Windows 编辑器中            | [Scintilla](/Scintilla)                |
 | Slint                    | 使用 Slint v1.17.1 构建 GUI                           | [Slint](/Slint)                    |
-| WriteTampermonkeyScripts | 引导 AI 代理规划、编写、调试、测试和维护 Tampermonkey 用户脚本         | [WriteTampermonkeyScripts](/WriteTampermonkeyScripts) |
+| WriteTampermonkeyScripts | 规划、编写、调试、测试和维护 Tampermonkey 用户脚本         | [WriteTampermonkeyScripts](/WriteTampermonkeyScripts) |
 | WriteuBlockOriginFilters | 编写、调试和解释 Adblock Plus (ABP) 过滤规则语法               | [WriteuBlockOriginFilters](/WriteuBlockOriginFilters) |
 | WriteAdblockPlusFilters  | AdGuard 过滤规则语法                                    | [WriteAdblockPlusFilters](/WriteAdblockPlusFilters)  |
 | WriteAdGuardFilters      | 完整的 uBlock Origin (uBO) 静态过滤语法参考                  | [WriteAdGuardFilters](/WriteAdGuardFilters)      |
