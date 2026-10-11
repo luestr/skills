@@ -1,5 +1,5 @@
 ---
-name: Write uBlockOrigin Filters
+name: write-ublock-origin-filters
 description: "完整的 uBlock Origin (uBO) 静态过滤语法参考。编写 uBlock Origin 自定义过滤规则时使用此技能，涵盖广告拦截、隐私保护或内容过滤。包含基础网络过滤模式（||、*、^、|）、所有网络过滤选项（$domain、$third-party、$important、$redirect、$removeparam、$csp、$replace、$header、$method、$denyallow、$badfilter、$all 等）、内容类型选项（$script、$image、$stylesheet、$font、$media、$xhr、$popup、$document、$frame 等）、元素隐藏规则（## 选择器、实体匹配、主机名正则）、过程式元素隐藏过滤器（:has、:has-text、:matches-css、:upward、:xpath、:matches-path、:watch-attr 等）、动作操作符（:remove、:style、:remove-attr、:remove-class）、HTML 过滤器（##^）、响应头过滤（##^responseheader）、脚本注入（##+js()）以及预处理指令（!#include、!#if）。当用户提到 uBlock Origin 过滤规则、uBO 语法、广告拦截规则、元素隐藏规则、过程式选择器、脚本注入或希望编写/调试任何 uBO 兼容过滤列表时触发。即使用户只是在编写或调试 uBlock Origin 过滤规则、创建自定义过滤列表或从 AdBlock Plus/AdGuard 迁移过滤规则到 uBO，也应使用此技能。"
 ---
 
@@ -13,14 +13,14 @@ description: "完整的 uBlock Origin (uBO) 静态过滤语法参考。编写 uB
 
 | 用户需求 | 加载文件 |
 |---|---|
-| 基础 URL 模式匹配（`*`、`\|\|`、`^`、`\|`）、HOSTS 文件解析、`_`（noop）、`*`（所有 URL） | `references/01-网络过滤基础.md` |
-| 内容类型选项：`$script`、`$image`、`$stylesheet`/`$css`、`$font`、`$media`、`$subdocument`/`$frame`、`$object`、`$other`、`$ping`、`$websocket`、`$xhr`、`$popup`、`$document`、`$top` | `references/02-内容类型选项.md` |
-| 行为修饰符：`$third-party`/`$3p`、`$first-party`/`$1p`、`$domain`/`$from`、`$to`、`$match-case`、`$important`、`$badfilter`、`$denyallow`、`$method`、`$header`、`$strict1p`、`$strict3p`、`$all`、`$elemhide`/`$ehide`、`$generichide`/`$ghide`、`$specifichide`/`$shide`、`$popunder`、`$inline-script`、`$inline-font`、`$cname`、`$ipaddress`、`$permissions` | `references/03-行为修饰符.md` |
-| 修改器过滤器（响应修改）：`$csp`、`$redirect`、`$redirect-rule`、`$removeparam`、`$replace`、`$uritransform`、`$urlskip`、`$empty`、`$mp4` | `references/04-修改器过滤器.md` |
-| 元素隐藏过滤器（`##`/`#@#`）、实体匹配、主机名正则、特定泛型、过程式过滤器（`:has()`、`:has-text()`、`:matches-css()`、`:upward()`、`:xpath()`、`:matches-path()`、`:watch-attr()` 等）、动作操作符（`:remove()`、`:style()`、`:remove-attr()`、`:remove-class()`） | `references/05-元素隐藏过滤器.md` |
-| HTML 过滤器（`##^`）、响应头过滤（`##^responseheader()`） | `references/06-HTML与响应头过滤.md` |
-| 脚本注入（`##+js()`）、可用脚本、重定向资源、资源库 | `references/07-脚本注入.md` |
-| 预处理指令（`!#include`、`!#if`/`!#else`/`!#endif`）、不支持的功能、兼容性说明 | `references/08-预处理指令与兼容性.md` |
+| 基础 URL 模式匹配（`*`、`\|\|`、`^`、`\|`）、HOSTS 文件解析、`_`（noop）、`*`（所有 URL） | `references/01-network-filter-basics.md` |
+| 内容类型选项：`$script`、`$image`、`$stylesheet`/`$css`、`$font`、`$media`、`$subdocument`/`$frame`、`$object`、`$other`、`$ping`、`$websocket`、`$xhr`、`$popup`、`$document`、`$top` | `references/02-content-type-options.md` |
+| 行为修饰符：`$third-party`/`$3p`、`$first-party`/`$1p`、`$domain`/`$from`、`$to`、`$match-case`、`$important`、`$badfilter`、`$denyallow`、`$method`、`$header`、`$strict1p`、`$strict3p`、`$all`、`$elemhide`/`$ehide`、`$generichide`/`$ghide`、`$specifichide`/`$shide`、`$popunder`、`$inline-script`、`$inline-font`、`$cname`、`$ipaddress`、`$permissions` | `references/03-behavior-modifiers.md` |
+| 修改器过滤器（响应修改）：`$csp`、`$redirect`、`$redirect-rule`、`$removeparam`、`$replace`、`$uritransform`、`$urlskip`、`$empty`、`$mp4` | `references/04-modifier-filters.md` |
+| 元素隐藏过滤器（`##`/`#@#`）、实体匹配、主机名正则、特定泛型、过程式过滤器（`:has()`、`:has-text()`、`:matches-css()`、`:upward()`、`:xpath()`、`:matches-path()`、`:watch-attr()` 等）、动作操作符（`:remove()`、`:style()`、`:remove-attr()`、`:remove-class()`） | `references/05-cosmetic-filters.md` |
+| HTML 过滤器（`##^`）、响应头过滤（`##^responseheader()`） | `references/06-html-response-header-filters.md` |
+| 脚本注入（`##+js()`）、可用脚本、重定向资源、资源库 | `references/07-scriptlet-injection.md` |
+| 预处理指令（`!#include`、`!#if`/`!#else`/`!#endif`）、不支持的功能、兼容性说明 | `references/08-preparsing-directives.md` |
 
 ## 规则类型速查
 
