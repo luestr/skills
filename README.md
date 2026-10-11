@@ -15,3 +15,11 @@
 | answer-me-with-html         | 遇到复杂问题，让 Agent 给你绘制一页能看懂的 HTML，这是 [answer-me-with-html](https://github.com/QingYunA/answer-me-with-html/blob/main/README.zh-CN.md) 技能的 Chatlo 专项适配。 | [answer-me-with-html](/answer-me-with-html)                 |
 
 > 注：[answer-me-with-html](/answer-me-with-html) 改编自上游 MIT 许可项目，其 SKILL.md 中声明 MIT 许可；仓库其余内容采用 CC BY-NC-SA 4.0。
+
+## 校验
+
+技能需满足 ZCode 的规范（`name` 与目录名一致且为小写 kebab-case、`description` 不超过 1024 字符、frontmatter 只用 `name`/`description`/`when_to_use`/`license`/`metadata`、参考文件被引用、双语文件集一致、链接有效）。修改技能后运行：
+
+```bash
+node scripts/check-skills.mjs
+```
