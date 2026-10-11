@@ -1,5 +1,5 @@
 ---
-name: WriteAdGuardFilters
+name: write-adguard-filters
 description: "编写 AdGuard 自定义过滤规则时使用此技能。涵盖基本规则语法、所有修饰符（$domain/$third-party/$important/$redirect/$replace/$removeparam/$cookie/$csp 等）、外观规则（元素隐藏/CSS/Extended CSS 选择器）、HTML 过滤、JavaScript/脚本片段规则、非基本规则修饰符、预处理器指令和调试技巧。当用户提及 AdGuard 过滤规则、广告拦截规则语法、过滤器列表编写、ABP 语法兼容、元素隐藏规则、Extended CSS 选择器（:has/:contains/:matches-css 等）时触发。即使用户只是在编写或调试任何类型的广告过滤规则，也应使用此技能。"
 ---
 

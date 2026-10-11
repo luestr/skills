@@ -1,5 +1,5 @@
 ---
-name: WriteAdGuardFilters
+name: write-adguard-filters
 description: "Complete AdGuard filtering rules syntax reference. Use this skill when writing AdGuard custom filters. Covers basic rule syntax, all modifiers ($domain/$third-party/$important/$redirect/$replace/$removeparam/$cookie/$csp etc.), cosmetic rules (element hiding/CSS/Extended CSS selectors), HTML filtering, JavaScript/scriptlet rules, non-basic rule modifiers, preprocessor directives, and debugging. Trigger when user mentions AdGuard filtering rules, ad blocking rule syntax, filter list authoring, ABP syntax compatibility, element hiding rules, Extended CSS selectors (:has/:contains/:matches-css etc.). Use this skill even when the user is just writing or debugging any type of ad filtering rules."
 ---
 

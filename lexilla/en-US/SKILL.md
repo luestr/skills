@@ -1,7 +1,8 @@
 ---
-name: Lexilla
-version: 5.5.1
+name: lexilla
 description: Integrate, build, discover, and extend language lexers for Scintilla with Lexilla.
+metadata:
+  version: 5.5.1
 ---
 
 # Lexilla Skill Index

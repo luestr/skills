@@ -1,7 +1,8 @@
 ---
-name: Scintilla
-version: 5.6.4
+name: scintilla
 description: 在将 Scintilla.dll 5.6.4 集成到 Windows 编辑器、调用其消息 API、配置语法样式和通知、使用 Lexilla 或构建该 DLL 时使用。
+metadata:
+  version: 5.6.4
 ---
 
 # Scintilla.dll v5.6.4

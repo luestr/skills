@@ -1,17 +1,15 @@
 ---
 name: answer-me-with-html
 description: >-
-  Turns an answer into a one-page visual HTML explainer (a Chatlo-specific adaptation). The model writes a short
-  Markdown draft and the bundled CLI builds one page. Use it proactively and liberally, without being asked, whenever a
-  page would help the reader more than plain text, even if plain text would also work: any explanation of how
-  something works or how parts relate (flow, request path, architecture, code or folder structure, state machine,
-  lifecycle, history); any comparison, trade-off or decision with pros and cons; any diagnosis, review or
-  investigation, especially with several causes or findings to rank; any answer with a table, a numbered or ranked
-  list, steps, branches or several sections; or when the user says "I don't get it / draw it / explain visually".
-  When in doubt, use it: a page is quick and cheap to make. Also for explainer videos ("make a video") and for changing
-  its settings. Skip only for small talk, a trivial one-line answer, or when the user asks for plain text.
-  This is the Chatlo (iOS, built-in WebKit browser) adaptation: page preview, web operations and video export all go
-  through Chatlo's built-in browser; no third-party browser is installed or used; WebM export uses VP8 / VP9 only.
+  Use this skill proactively and liberally, without being asked, whenever a one-page visual HTML explainer would help more
+  than plain text (a Chatlo-specific adaptation). You write only a short Markdown draft; the bundled CLI does layout and
+  diagrams. Use it for explanations of how things work or relate (flow, request path, architecture, code or folder
+  structure, state machine, lifecycle, history); comparisons, trade-offs or decisions; diagnosis, review or investigation
+  with causes or findings to rank; answers with a table, list, steps, branches or sections; or when the user says "I don't
+  get it / draw it / explain visually". When in doubt, use it: a page is quick and cheap. Also for explainer videos ("make
+  a video") and for changing its settings. Skip small talk, trivial one-line answers, or when the user asks for plain
+  text. Adapted for Chatlo (iOS, built-in WebKit): preview, web actions and WebM-only (VP8/VP9) export use its built-in
+  browser; no third-party browser is used.
 license: MIT
 metadata:
   slug: answer-me-with-html

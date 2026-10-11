@@ -1,5 +1,5 @@
 ---
-name: Write AdblockPlus Filters
+name: write-adblock-plus-filters
 description: "Write, debug, and explain Adblock Plus (ABP) filter syntax. Use this skill whenever the user needs to create ABP filters, understand filter syntax, build filter lists, debug why a filter isn't working, convert between filter types, or learn about ABP-specific features like extended CSS selectors, snippet filters, or sitekey. Also trigger when users mention ad blocking rules, element hiding, filter options, EasyList format, or any ABP filter-related question — even if they don't explicitly say 'Adblock Plus.'"
 ---
 

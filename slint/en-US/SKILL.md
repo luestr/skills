@@ -1,5 +1,5 @@
 ---
-name: Slint
+name: slint
 description: Build Embedded, Desktop, and Mobile GUIs with Slint v1.17.1, covering the .slint language, reactive UI, layouts, controls, platforms, tooling, and Rust/C++/JavaScript/Python integrations.
 ---
 
@@ -10,9 +10,10 @@ description: Build Embedded, Desktop, and Mobile GUIs with Slint v1.17.1, coveri
 1. Start with [`references/overview.md`](references/overview.md) to select a topic.
 2. Read [`references/development.md`](references/development.md) for application-development practices.
 3. Read [`references/language.md`](references/language.md) before writing UI.
-4. Read [`references/integrations.md`](references/integrations.md) when running a project.
-5. Read [`references/platforms-and-tools.md`](references/platforms-and-tools.md) for tooling, platforms, renderers, or deployment.
-6. Read [`references/tutorial.md`](references/tutorial.md) for a complete example.
+4. Read [`references/reference.md`](references/reference.md) for the official API reference when you need exact types, properties, callbacks, elements, or built-in functions.
+5. Read [`references/integrations.md`](references/integrations.md) when running a project.
+6. Read [`references/platforms-and-tools.md`](references/platforms-and-tools.md) for tooling, platforms, renderers, or deployment.
+7. Read [`references/tutorial.md`](references/tutorial.md) for a complete example.
 
 ## Version and sources
 

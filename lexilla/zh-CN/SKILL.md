@@ -1,7 +1,8 @@
 ---
-name: Lexilla
-version: 5.5.1
+name: lexilla
 description: 使用 Lexilla 为 Scintilla 集成、构建、发现和扩展语言 lexer。
+metadata:
+  version: 5.5.1
 ---
 
 # Lexilla 技能索引

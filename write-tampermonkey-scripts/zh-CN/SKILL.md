@@ -1,7 +1,8 @@
 ---
-name: WriteTampermonkeyScripts
+name: write-tampermonkey-scripts
 description: 引导 AI 代理规划、编写、调试、测试和维护 Tampermonkey 用户脚本。当用户请求用户脚本、浏览器页面自动化、DOM 增强、Tampermonkey 元数据、GM_* API、@match、@grant、@run-at、@connect、跨源请求、SPA 页面集成或脚本注入任务时使用此技能，即使用户没有明确提及 Tampermonkey。
-compatibility: 与平台无关的 Markdown 指南。请查阅 Tampermonkey 官方文档，以获取浏览器、版本、权限和 API 可用性的详细信息。
+metadata:
+  compatibility: 与平台无关的 Markdown 指南。请查阅 Tampermonkey 官方文档，以获取浏览器、版本、权限和 API 可用性的详细信息。
 ---
 
 # Tampermonkey 用户脚本编写

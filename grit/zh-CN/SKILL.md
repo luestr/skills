@@ -1,6 +1,6 @@
 ---
-name: Grit
-description: "用 Grit 命令行（grit-scm.com，Rust 重写的现代 Git 客户端）完成仓库检视、提交、分支、合并、cherry-pick、远程同步与打标签，并给出脚本/Agent 所需的 --json/--filter 契约；同时完整列出 Git 有而 Grit 没有的能力与回退方案。支持的 Grit 版本：0.5.x（以 v0.5.2 实测校准；不同补丁版本的命令面可能有差异，以本机 grit --help 为准）。当任务涉及版本控制（status、提交、建分支、切分支、合并、推送、拉取、标签、diff、历史查看）时，只要环境中可能存在 grit，就先查阅本技能；尤其在做「部分提交、取消暂存、改写历史、force push、解决冲突」这类 Grit 刻意不做的事情之前，务必先读 references/git-gaps.md 选择正确的工具。"
+name: grit
+description: "当任务涉及版本控制（status、提交、建分支、切分支、合并、推送、拉取、标签、diff、历史查看）时，只要环境中可能存在 grit，就先查阅本技能；尤其在做「部分提交、取消暂存、改写历史、force push、解决冲突」这类 Grit 刻意不做的事情之前，务必先读 references/git-gaps.md 选择正确的工具。用 Grit 命令行（grit-scm.com，Rust 重写的现代 Git 客户端）完成仓库检视、提交、分支、合并、cherry-pick、远程同步与打标签，并给出脚本/Agent 所需的 --json/--filter 契约；同时完整列出 Git 有而 Grit 没有的能力与回退方案。支持的 Grit 版本：0.5.x（以 v0.5.2 实测校准；不同补丁版本的命令面可能有差异，以本机 grit --help 为准）。"
 ---
 
 # Grit 使用技能

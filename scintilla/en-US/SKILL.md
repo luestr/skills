@@ -1,7 +1,8 @@
 ---
-name: Scintilla
-version: 5.6.4
+name: scintilla
 description: Use when integrating Scintilla.dll 5.6.4 into a Windows editor, calling its message API, configuring syntax styling, notifications, Lexilla, or building the DLL.
+metadata:
+  version: 5.6.4
 ---
 
 # Scintilla.dll v5.6.4

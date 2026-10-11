@@ -1,7 +1,8 @@
 ---
-name: WriteTampermonkeyScripts
+name: write-tampermonkey-scripts
 description: Guide an AI agent through planning, writing, debugging, testing, and maintaining Tampermonkey userscripts. Use this skill whenever a user asks for a userscript, browser-page automation, DOM enhancement, Tampermonkey metadata, GM_* API, @match, @grant, @run-at, @connect, cross-origin request, SPA page integration, or script injection task, even when Tampermonkey is not named explicitly.
-compatibility: Platform-neutral Markdown guidance. Consult the official Tampermonkey documentation for browser, version, permission, and API availability details.
+metadata:
+  compatibility: Platform-neutral Markdown guidance. Consult the official Tampermonkey documentation for browser, version, permission, and API availability details.
 ---
 
 # Tampermonkey Userscript Authoring

@@ -1,5 +1,5 @@
 ---
-name: Write AdblockPlus Filters
+name: write-adblock-plus-filters
 description: "编写、调试和解释 Adblock Plus (ABP) 过滤规则语法。当用户需要创建 ABP 过滤规则、了解过滤规则语法、构建过滤规则列表、调试规则为何不生效、在不同过滤规则类型之间转换，或学习 ABP 特有功能（如扩展 CSS 选择器、代码片段过滤器、站点密钥等）时使用此技能。当用户提到广告拦截规则、元素隐藏、过滤规则选项、EasyList 格式或任何 ABP 过滤规则相关问题时也应触发，即使他们没有明确说'Adblock Plus'。"
 ---
 
