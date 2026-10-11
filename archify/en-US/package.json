@@ -1,0 +1,27 @@
+{
+  "name": "archify",
+  "version": "3.0.1",
+  "private": true,
+  "type": "module",
+  "description": "JSON-IR diagram renderers (architecture / workflow / sequence / dataflow / lifecycle). Chatlo adaptation: run with bun; browser evidence is delegated to the Chatlo built-in browser.",
+  "license": "MIT",
+  "bin": { "archify": "./bin/archify.mjs" },
+  "engines": { "node": ">=18", "bun": ">=1.0" },
+  "scripts": {
+    "generate:brand-marks": "bun scripts/generate-brand-marks.mjs",
+    "check:brand-marks": "bun scripts/generate-brand-marks.mjs --check",
+    "generate:validators": "bun scripts/generate-validators.mjs",
+    "check:validators": "bun scripts/generate-validators.mjs --check",
+    "render:examples": "bun scripts/render-examples.mjs ../examples",
+    "doctor": "bun bin/archify.mjs doctor"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "parse5": "7.3.0",
+    "saxes": "6.0.0",
+    "simple-icons": "16.28.0",
+    "skills": "1.7.0",
+    "yaml": "2.9.1"
+  },
+  "overrides": { "fast-uri": "^3.1.7" }
+}
