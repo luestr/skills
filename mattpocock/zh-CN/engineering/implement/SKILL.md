@@ -1,6 +1,6 @@
 ---
 name: implement
-description: "实现（implement）规格说明（spec）或工单（tickets）中描述的一项工作。"
+description: "实现规格说明或工单中描述的一项工作。"
 disable-model-invocation: true
 ---
 

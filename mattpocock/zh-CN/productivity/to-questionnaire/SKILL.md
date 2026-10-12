@@ -1,6 +1,6 @@
 ---
 name: to-questionnaire
-description: 把你无法完全回答的决策变成一份问卷（questionnaire），交给别人填写。
+description: 把你无法完全回答的决策变成一份问卷，交给别人填写。
 disable-model-invocation: true
 ---
 

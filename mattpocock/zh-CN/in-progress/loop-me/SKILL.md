@@ -1,6 +1,6 @@
 ---
 name: loop-me
-description: 在本工作区内对我进行拷问（grill），打磨出我想构建的工作流的规格。
+description: 在本工作区内对我进行拷问，打磨出我想构建的工作流的规格。
 disable-model-invocation: true
 argument-hint: "要设计的工作流；没有就去找一个"
 ---

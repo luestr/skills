@@ -1,6 +1,6 @@
 ---
 name: diagnosing-bugs
-description: 针对困难 bug 与性能回归的诊断回路（diagnosis loop）。当用户说 “diagnose”/“debug this”，或报告某个东西坏掉/抛错/失败/变慢时使用。
+description: 针对困难 bug 与性能回归的诊断回路。当用户要求诊断或调试某个东西，或报告某个东西坏掉/抛错/失败/变慢时使用。
 ---
 
 # 诊断 bug

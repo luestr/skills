@@ -1,6 +1,6 @@
 ---
 name: teach
-description: 在本工作区内教用户一项新技能或概念（teach a new skill or concept）。
+description: 在本工作区内教用户一项新技能或概念。
 disable-model-invocation: true
 argument-hint: "你想学习什么？"
 ---

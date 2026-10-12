@@ -1,6 +1,6 @@
 ---
 name: claude-handoff
-description: 把当前对话交接（hand off）给一个全新的后台 Agent，让它立刻接手工作。
+description: 把当前对话交接给一个全新的后台 Agent，让它立刻接手工作。
 argument-hint: "下一次会话将用来做什么？"
 disable-model-invocation: true
 ---

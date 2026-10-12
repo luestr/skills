@@ -1,6 +1,6 @@
 ---
 name: setup-matt-pocock-skills
-description: "为本仓库配置工程技能所需的设置（setup）：issue 跟踪器、分诊标签词汇表和领域文档布局。在首次使用其他工程技能之前运行一次。"
+description: "为本仓库配置工程技能所需的设置：issue 跟踪器、分诊标签词汇表和领域文档布局。在首次使用其他工程技能之前运行一次。"
 disable-model-invocation: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: to-spec
-description: "把当前对话变成规格说明（spec）并发布到项目的 issue 跟踪器：不做访谈，只综合已经讨论过的内容。"
+description: "把当前对话变成规格说明并发布到项目的 issue 跟踪器：不做访谈，只综合已经讨论过的内容。"
 disable-model-invocation: true
 ---
 

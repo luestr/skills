@@ -1,6 +1,6 @@
 ---
 name: wizard
-description: 生成一个交互式 bash 向导（wizard），带人逐步完成只有本人能做的步骤。适用于基础设施开通（provisioning）、设置凭据（credentials）或 CI secrets、走通不熟悉的第三方控制台，或执行一次性迁移或上线切换（cutover）。不要用它处理 Agent 自己能完成的步骤。
+description: 生成一个交互式 bash 向导，带人逐步完成只有本人能做的步骤。适用于基础设施开通、设置凭据或 CI secrets、走通不熟悉的第三方控制台，或执行一次性迁移或上线切换。不要用它处理 Agent 自己能完成的步骤。
 ---
 
 # 向导

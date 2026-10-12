@@ -1,6 +1,6 @@
 ---
 name: ask-matt
-description: 问哪种技能（skill）或流程（flow）适合你的处境。本仓库各项技能之上的路由。
+description: 问哪种技能或流程适合你的处境。本仓库各项技能之上的路由。
 disable-model-invocation: true
 ---
 

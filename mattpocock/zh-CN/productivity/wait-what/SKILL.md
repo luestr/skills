@@ -1,6 +1,6 @@
 ---
 name: wait-what
-description: "停。上一条消息没讲明白：重新讲一遍（re-pitch）。"
+description: "停。上一条消息没讲明白：重新讲一遍。"
 disable-model-invocation: true
 ---
 
