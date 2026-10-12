@@ -1,0 +1,5 @@
+interface:
+  display_name: "Retro"
+  short_description: "对一次编程会话做复盘"
+policy:
+  allow_implicit_invocation: false

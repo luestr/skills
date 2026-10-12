@@ -1,0 +1,5 @@
+interface:
+  display_name: "Wait What"
+  short_description: "重新讲一遍：更简单，并补上我缺的上下文"
+policy:
+  allow_implicit_invocation: false

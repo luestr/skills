@@ -1,0 +1,5 @@
+interface:
+  display_name: "Ask Matt"
+  short_description: "找到合适的技能或工作流"
+policy:
+  allow_implicit_invocation: false

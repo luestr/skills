@@ -1,0 +1,3 @@
+interface:
+  display_name: "Grilling"
+  short_description: "每轮一组问题，对思路做压力测试"

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Loop Me"
+  short_description: "为你想要构建的工作流写规格"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Wayfinder"
+  short_description: "把大型任务绘制成决策工单"
+policy:
+  allow_implicit_invocation: false

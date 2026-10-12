@@ -1,0 +1,5 @@
+interface:
+  display_name: "Writing Beats"
+  short_description: "把素材组装成节拍"
+policy:
+  allow_implicit_invocation: false

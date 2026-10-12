@@ -1,0 +1,5 @@
+interface:
+  display_name: "Setup TS Deep Modules"
+  short_description: "强制实现 TypeScript 深模块"
+policy:
+  allow_implicit_invocation: false

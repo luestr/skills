@@ -1,0 +1,3 @@
+interface:
+  display_name: "Setup Pre-Commit"
+  short_description: "添加 pre-commit 质量检查"
