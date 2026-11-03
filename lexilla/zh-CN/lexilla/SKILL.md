@@ -2,6 +2,7 @@
 name: lexilla
 description: 使用 Lexilla 为 Scintilla 集成、构建、发现和扩展语言 lexer。
 metadata:
+  language: zh-CN
   version: 5.5.1
 ---
 

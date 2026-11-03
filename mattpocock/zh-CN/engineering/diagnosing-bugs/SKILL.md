@@ -1,6 +1,8 @@
 ---
 name: diagnosing-bugs
 description: 针对困难 bug 与性能回归的诊断回路。当用户要求诊断或调试某个东西，或报告某个东西坏掉/抛错/失败/变慢时使用。
+metadata:
+  language: zh-CN
 ---
 
 # 诊断 bug

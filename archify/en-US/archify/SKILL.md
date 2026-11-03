@@ -3,6 +3,7 @@ name: archify
 description: "Create polished, validated architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML with inline SVG, dark/light themes, optional trace motion, and PNG/JPEG/WebP/SVG/WebM export. Use when the user asks to visualize system architecture, infrastructure, cloud/security/network topology, technical workflows, API call sequences, request lifecycles, data pipelines, ETL/ELT, data lineage, or state machines, or to convert or beautify Mermaid flowchart, sequenceDiagram, and stateDiagram input. Also use for everyday subjects with steps, parts, relationships, or states: a leave or travel plan, an approval process, a back-and-forth such as renting, where money or documents go, or where an application or order stands. Not for numeric charts or dashboards. This is the Chatlo (iOS, built-in WebKit browser) adaptation: run with bun, use only the Chatlo built-in browser, and delegate the automated browser gate to a built-in-browser review."
 license: MIT
 metadata:
+  language: en-US
   version: "3.0"
   author: tt-a1i
   based_on: Cocoon-AI/architecture-diagram-generator (MIT, v1.0)

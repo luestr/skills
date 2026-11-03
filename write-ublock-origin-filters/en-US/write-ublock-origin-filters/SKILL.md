@@ -1,6 +1,8 @@
 ---
 name: write-ublock-origin-filters
 description: "Complete uBlock Origin (uBO) static filter reference. Use this skill when writing or debugging uBO custom filters or filter lists for ad blocking, privacy or content filtering, or when migrating filters from AdBlock Plus/AdGuard. Covers network patterns (||, *, ^, |) and options ($domain, $third-party, $important, $redirect, $removeparam, $csp, $replace, $header, $method, $badfilter, $all), content-type options ($script, $image, $stylesheet, $font, $media, $xhr, $popup, $document, $frame), cosmetic filters (##, CSS selectors, entity matching), procedural filters (:has, :has-text, :matches-css, :upward, :xpath, :matches-path, :watch-attr), action operators (:remove, :style, :remove-attr), HTML filters (##^), response-header filtering (##^responseheader), scriptlet injection (##+js()), and pre-parsing directives (!#include, !#if). Trigger whenever the user mentions uBO syntax, ad blocking rules, element hiding, procedural selectors, scriptlet injection, or a uBO-compatible filter list."
+metadata:
+  language: en-US
 ---
 
 # uBlock Origin Static Filter Syntax Reference

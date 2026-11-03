@@ -30,9 +30,7 @@ create-scoop-manifest/
 ├── en-US/
 │   └── create-scoop-manifest/
 │       └── …                    same structure, same scripts
-├── README.md
-├── LICENSE
-└── .gitignore
+└── README.md
 ```
 
 ## Scripts
@@ -76,4 +74,4 @@ Claims marked "verified by experiment" in the documents were reproduced on a rea
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT. Include the license text at the repository level — skill directories intentionally carry no `LICENSE` or `.gitignore` of their own, since neither plays any part in running the skill and both would only clutter the install artifact.

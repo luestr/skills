@@ -2,6 +2,7 @@
 name: pr
 description: "Use when writing a PR body."
 metadata:
+  language: en-US
   credits:
     skill: show-me
     author: Dex Horthy

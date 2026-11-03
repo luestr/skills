@@ -3,6 +3,7 @@ name: archify
 description: "创建精炼、经过校验的架构图、工作流图、时序图、数据流图和生命周期/状态图，输出为可交互的独立 HTML（内联 SVG、深浅色主题、可选 trace 动效，支持 PNG/JPEG/WebP/SVG/WebM 导出）。可接受自然语言需求，或粘贴的 Mermaid flowchart、sequenceDiagram、stateDiagram 输入；当图必须反映真实代码时，检查仓库证据。适用于用户要求可视化系统架构、基础设施、云/安全/网络拓扑、技术流程、API 调用时序、请求生命周期、数据管道、ETL/ELT、数据血缘、状态机，或转换/美化 Mermaid 的场景。也适用于带步骤、部件、关系或状态的日常主题：请假或出行计划、申请或审批流程、租赁等往复流程、钱或单据的流向、申请或订单当前进度。不适用于数值图表或仪表盘。本技能是 Chatlo（iOS，内置 WebKit 浏览器）适配版：运行时统一用 bun，浏览器操作只用 Chatlo 内置浏览器，浏览器自动校验在 Chatlo 上委派给内置浏览器复核。"
 license: MIT
 metadata:
+  language: zh-CN
   version: "3.0"
   author: tt-a1i
   based_on: Cocoon-AI/architecture-diagram-generator (MIT, v1.0)

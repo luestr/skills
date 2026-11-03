@@ -12,6 +12,7 @@ description: >-
   browser; no third-party browser is used.
 license: MIT
 metadata:
+  language: en-US
   slug: answer-me-with-html
   display_name: Answer me with HTML (Chatlo adaptation)
   display_name_en: Answer me with HTML

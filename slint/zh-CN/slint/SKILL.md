@@ -1,6 +1,8 @@
 ---
 name: slint
 description: 使用 Slint v1.17.1 构建 Embedded、Desktop 和 Mobile GUI；覆盖 .slint 语言、响应式 UI、布局、控件、平台、工具链及 Rust/C++/JavaScript/Python 集成。
+metadata:
+  language: zh-CN
 ---
 
 # Slint v1.17.1 技能

@@ -1,6 +1,8 @@
 ---
 name: writing-for-agents
 description: 为 Agent 撰写文档。在创建或编辑技能，或修改 AGENTS.md 或 CLAUDE.md 时使用。
+metadata:
+  language: zh-CN
 ---
 
 撰写任何 Agent 要读的文档时的参考：一份技能、一份 `AGENTS.md` / `CLAUDE.md`、一份经由指针触达的文档。打包方式各不相同，写法并无区别：同一组杠杆让每一份都变得可预测，因为 Agent 每次运行走的是同一个_过程_，而不是产出同样的输出。

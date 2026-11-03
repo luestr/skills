@@ -1,6 +1,8 @@
 ---
 name: write-ublock-origin-filters
 description: "完整的 uBlock Origin (uBO) 静态过滤语法参考。编写 uBlock Origin 自定义过滤规则时使用此技能，涵盖广告拦截、隐私保护或内容过滤。包含基础网络过滤模式（||、*、^、|）、所有网络过滤选项（$domain、$third-party、$important、$redirect、$removeparam、$csp、$replace、$header、$method、$denyallow、$badfilter、$all 等）、内容类型选项（$script、$image、$stylesheet、$font、$media、$xhr、$popup、$document、$frame 等）、元素隐藏规则（## 选择器、实体匹配、主机名正则）、过程式元素隐藏过滤器（:has、:has-text、:matches-css、:upward、:xpath、:matches-path、:watch-attr 等）、动作操作符（:remove、:style、:remove-attr、:remove-class）、HTML 过滤器（##^）、响应头过滤（##^responseheader）、脚本注入（##+js()）以及预处理指令（!#include、!#if）。当用户提到 uBlock Origin 过滤规则、uBO 语法、广告拦截规则、元素隐藏规则、过程式选择器、脚本注入或希望编写/调试任何 uBO 兼容过滤列表时触发。即使用户只是在编写或调试 uBlock Origin 过滤规则、创建自定义过滤列表或从 AdBlock Plus/AdGuard 迁移过滤规则到 uBO，也应使用此技能。"
+metadata:
+  language: zh-CN
 ---
 
 # uBlock Origin 静态过滤语法参考

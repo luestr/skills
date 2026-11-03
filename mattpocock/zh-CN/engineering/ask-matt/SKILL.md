@@ -1,7 +1,9 @@
 ---
 name: ask-matt
 description: 问哪种技能或流程适合你的处境。本仓库各项技能之上的路由。
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 # 问 Matt

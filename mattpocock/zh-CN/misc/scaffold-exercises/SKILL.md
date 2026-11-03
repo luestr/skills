@@ -1,6 +1,8 @@
 ---
 name: scaffold-exercises
 description: 创建包含章节、题目、解答和讲解、并能通过 lint 的练习目录结构。当用户想搭建练习脚手架、创建练习占位，或建立新的课程章节时使用。
+metadata:
+  language: zh-CN
 ---
 
 # 搭建练习脚手架

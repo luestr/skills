@@ -1,7 +1,9 @@
 ---
 name: to-tickets
 description: 把计划、规格说明或当前对话拆解成一组曳光弹工单，每个工单声明自己的阻塞关系，并发布到已配置的跟踪器（本地时阻塞关系以文本形式写在每个工单各自的文件中，真实跟踪器上则用原生阻塞链接）。
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 # 拆解为工单

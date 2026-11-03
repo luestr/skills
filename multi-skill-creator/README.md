@@ -16,6 +16,19 @@
 
 两个版本使用同一个技能名，功能与行为保持一致。**只安装你需要的那个**——每个目录都是自足的。
 
+## 安装
+
+把这个目录（`multi-skill-creator/`）整个放进你的 agent 的技能目录：
+
+| 工具 | 安装位置 |
+|---|---|
+| Claude Code | `.claude/skills/multi-skill-creator/`（项目级）或 `~/.claude/skills/`（全局） |
+| Finch | `.finch/skills/multi-skill-creator/` |
+| 通用约定 | `.agents/skills/multi-skill-creator/` |
+| 其他 CLI | 见其文档中的技能/命令目录 |
+
+只需要这一个目录。中英两版技能名相同，不要同时装两套，否则会互相遮蔽。
+
 ## 默认产出双语技能
 
 这个技能**默认把要创建/修改的技能写成中英双语**：`zh-CN/<skill-name>/` 与 `en-US/<skill-name>/` 两份，各自独立可用。用户明确指定语言（"只要中文"、"英文就行"、"先中文，英文以后再说"）时，才只做那一版。
@@ -115,7 +128,7 @@ multi-skill-creator/
 └── README.md
 ```
 
-技能目录里不放 `LICENSE`、`.gitignore` 这类仓库层面的文件——它们不参与技能运行，只会混进安装包。
+技能目录里不放 `LICENSE`、`.gitignore` 这类仓库层面的文件——它们不参与技能运行，只会混进安装包。所以安装说明、前置条件与许可都写在这里，而不是语言目录内。
 
 ## 运行要求
 

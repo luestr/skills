@@ -1,6 +1,8 @@
 ---
 name: tdd
 description: 测试驱动开发。当用户想要测试先行地构建功能或修复 bug、提到“红-绿-重构”，或想要集成测试时使用。
+metadata:
+  language: zh-CN
 ---
 
 # 测试驱动开发

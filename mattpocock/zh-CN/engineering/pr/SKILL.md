@@ -2,6 +2,7 @@
 name: pr
 description: "在撰写 PR 正文时使用。"
 metadata:
+  language: zh-CN
   credits:
     skill: show-me
     author: Dex Horthy

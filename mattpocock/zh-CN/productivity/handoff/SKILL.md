@@ -1,8 +1,10 @@
 ---
 name: handoff
 description: 把当前对话压缩成一份交接文档，供另一个 Agent 接手。
-argument-hint: "下一次会话将用来做什么？"
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  argument-hint: "下一次会话将用来做什么？"
+  disable-model-invocation: true
 ---
 
 写一份交接文档，概述当前对话，让一个全新的 Agent 能接着做下去。保存到用户操作系统的临时目录（`$TMPDIR`，没有则 `/tmp`；Windows 上是 `%TEMP%`）——不要存到当前工作区。

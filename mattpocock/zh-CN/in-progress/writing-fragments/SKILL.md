@@ -1,7 +1,9 @@
 ---
 name: writing-fragments
 description: "写作，发散：挖掘原始片段，暂不搭结构。"
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 <what-to-do>

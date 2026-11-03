@@ -1,7 +1,9 @@
 ---
 name: to-spec
 description: "把当前对话变成规格说明并发布到项目的 issue 跟踪器：不做访谈，只综合已经讨论过的内容。"
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 这个技能取当前对话上下文和对代码库的理解，产出一份规格说明。不要访谈用户；只综合你已经知道的内容。

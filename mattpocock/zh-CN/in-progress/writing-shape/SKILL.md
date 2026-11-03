@@ -1,7 +1,9 @@
 ---
 name: writing-shape
 description: "写作，收敛：把素材逐段塑造成文章。"
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 <what-to-do>

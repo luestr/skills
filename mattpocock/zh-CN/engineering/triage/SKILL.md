@@ -1,7 +1,9 @@
 ---
 name: triage
 description: 让 issue 和外部 PR 在分诊角色的状态机中流转：分类、验证，必要时拷问，并撰写可直接交给 Agent 的简报。
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 # 分诊

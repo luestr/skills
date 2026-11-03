@@ -1,6 +1,8 @@
 ---
 name: research
 description: 针对高可信的一手资料调研一个问题，并把结论写成仓库里的一个 Markdown 文件。当用户想要调研某个主题、收集文档或 API 事实，或把阅读的功课交给后台 Agent 时使用。
+metadata:
+  language: zh-CN
 ---
 
 起一个**后台 Agent** 来做调研，这样它读资料的时候你可以继续干活。

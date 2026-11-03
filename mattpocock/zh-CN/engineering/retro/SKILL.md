@@ -1,7 +1,9 @@
 ---
 name: retro
 description: "对一次编程会话做复盘。"
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 用户要求做一次**复盘**。你要针对编程 Agent 的**环境**提出改进建议，以改善未来的运行。

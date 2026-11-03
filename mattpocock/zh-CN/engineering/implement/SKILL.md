@@ -1,7 +1,9 @@
 ---
 name: implement
 description: "实现规格说明或工单中描述的一项工作。"
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 实现用户在规格说明或工单中描述的工作。

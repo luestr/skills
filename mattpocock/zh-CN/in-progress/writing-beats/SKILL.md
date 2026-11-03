@@ -1,7 +1,9 @@
 ---
 name: writing-beats
 description: 写作，收敛；把素材组装成一段由节拍构成的旅程，在每个节拍借力于某个术语之前先铺垫好该术语。
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 <what-to-do>

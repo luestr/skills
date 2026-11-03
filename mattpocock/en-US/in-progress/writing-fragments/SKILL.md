@@ -1,7 +1,9 @@
 ---
 name: writing-fragments
 description: "Writing, explore: mine raw fragments, no structure yet."
-disable-model-invocation: true
+metadata:
+  language: en-US
+  disable-model-invocation: true
 ---
 
 <what-to-do>

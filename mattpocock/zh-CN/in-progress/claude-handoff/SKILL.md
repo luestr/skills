@@ -1,8 +1,10 @@
 ---
 name: claude-handoff
 description: 把当前对话交接给一个全新的后台 Agent，让它立刻接手工作。
-argument-hint: "下一次会话将用来做什么？"
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  argument-hint: "下一次会话将用来做什么？"
+  disable-model-invocation: true
 ---
 
 为当前对话写一份交接摘要，好让一个全新的 Agent 能继续这项工作。把它保存到用户操作系统的临时目录，然后启动一个后台 Agent，把摘要作为提示词交给它：`claude --bg --name "<descriptive name>" -- "$(cat <summary file>)"`。以文件形式传入可以避免 shell 执行摘要中的反引号或展开 `$`。它从当前工作目录启动并立即返回；用户用 `claude agents` 管理它。

@@ -1,7 +1,9 @@
 ---
 name: wayfinder
 description: 把一大块工作（超出单个 Agent 会话的容量）规划为 issue 跟踪器上由决策工单构成的共享地图，然后一次解决一张，直到通往目的地的路清晰可见。
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 一个粗略的想法已经到来，它大到超出单个 Agent 会话的容量，还裹在迷雾里：从这里到**目的地**的路还看不见。寻路要做的就是找到这条路，而不是径直冲向目的地。本技能把这条路**绘制**成仓库 issue 跟踪器上的一张**共享地图**，然后一次一张地处理它的**决策工单**（解决方式是做出决策的问题，而不是可执行构建的切片），直到路线清晰。

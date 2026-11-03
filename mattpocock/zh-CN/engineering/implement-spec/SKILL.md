@@ -1,7 +1,9 @@
 ---
 name: implement-spec
 description: "用代码实现 /to-spec 和 /to-tickets 的产物。"
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 你已拿到一份规格说明。这份规格说明应当带有与之关联的工单，描述如何实现它。

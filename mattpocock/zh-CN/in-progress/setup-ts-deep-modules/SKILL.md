@@ -1,7 +1,9 @@
 ---
 name: setup-ts-deep-modules
 description: 把 dependency-cruiser 接入 TypeScript 仓库，让每个包都成为深模块，实现藏在子目录中，只能经由包的入口文件访问。用户手动调用。
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 # 配置 TS 深模块

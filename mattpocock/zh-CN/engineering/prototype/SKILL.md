@@ -1,6 +1,8 @@
 ---
 name: prototype
 description: 构建一次性原型来回答一个设计问题。当用户想验证某个状态模型或逻辑感觉对不对，或想探索 UI 应该长什么样时使用。
+metadata:
+  language: zh-CN
 ---
 
 # 原型

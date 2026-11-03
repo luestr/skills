@@ -1,8 +1,10 @@
 ---
 name: teach
 description: 在本工作区内教用户一项新技能或概念。
-disable-model-invocation: true
-argument-hint: "你想学习什么？"
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
+  argument-hint: "你想学习什么？"
 ---
 
 用户要求你教他们一些东西。这是一个有状态的请求——他们打算跨多个会话学习这个主题。

@@ -1,7 +1,9 @@
 ---
 name: to-questionnaire
 description: 把你无法完全回答的决策变成一份问卷，交给别人填写。
-disable-model-invocation: true
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
 ---
 
 把用户无法独自回答的事情变成一份**问卷**：一份 Markdown 文档，交给某一个人异步填写，或者在一次会议上一起填。收件人掌握着用户缺失的知识；问卷就是把这些知识从他们那里引出来。

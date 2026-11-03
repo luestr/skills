@@ -2,6 +2,7 @@
 name: lexilla
 description: Integrate, build, discover, and extend language lexers for Scintilla with Lexilla.
 metadata:
+  language: en-US
   version: 5.5.1
 ---
 

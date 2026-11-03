@@ -12,6 +12,7 @@ description: >-
   一律走 Chatlo 内置浏览器，不安装也不调用任何第三方浏览器；WebM 导出仅使用 VP8 / VP9。
 license: MIT
 metadata:
+  language: zh-CN
   slug: answer-me-with-html
   display_name: HTML 图文解答（Chatlo 适配版）
   display_name_en: Answer me with HTML

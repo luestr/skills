@@ -1,6 +1,8 @@
 ---
 name: migrate-to-shoehorn
 description: 把测试文件从 `as` 类型断言迁移到 @total-typescript/shoehorn。当用户提到 shoehorn、想在测试中替换 `as`，或需要部分测试数据时使用。
+metadata:
+  language: zh-CN
 ---
 
 # 迁移到 Shoehorn

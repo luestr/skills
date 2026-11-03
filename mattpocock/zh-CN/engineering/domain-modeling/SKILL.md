@@ -1,6 +1,8 @@
 ---
 name: domain-modeling
 description: 构建并打磨项目的领域模型。在讨论代码库术语、编写或编辑 GLOSSARY.md，或记录、编辑 ADR 时使用。
+metadata:
+  language: zh-CN
 ---
 
 # 领域建模

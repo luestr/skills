@@ -1,8 +1,10 @@
 ---
 name: loop-me
 description: 在本工作区内对我进行拷问，打磨出我想构建的工作流的规格。
-disable-model-invocation: true
-argument-hint: "要设计的工作流；没有就去找一个"
+metadata:
+  language: zh-CN
+  disable-model-invocation: true
+  argument-hint: "要设计的工作流；没有就去找一个"
 ---
 
 运行一场有状态的 `/grilling` 会话，唯一产出是**工作流**规格。运用拷问纪律（不留情面、一次一轮问题、每个问题都附上推荐答案），对准下面的词汇与目标。拷问每敲定一件事，就相应地创建、编辑、删除规格。

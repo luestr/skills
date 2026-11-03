@@ -1,6 +1,8 @@
 ---
 name: slint
 description: Build Embedded, Desktop, and Mobile GUIs with Slint v1.17.1, covering the .slint language, reactive UI, layouts, controls, platforms, tooling, and Rust/C++/JavaScript/Python integrations.
+metadata:
+  language: en-US
 ---
 
 # Slint v1.17.1 Skill
