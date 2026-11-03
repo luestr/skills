@@ -16,8 +16,8 @@ metadata:
   display_name: HTML 图文解答（Chatlo 适配版）
   display_name_en: Answer me with HTML
   version: 1.0.0
-  summary: 只写一段 Markdown 草稿，技能自带 CLI 就生成一页可视化 HTML 讲解。本文是 Chatlo（iOS，内置 WebKit 浏览器）专项适配版：页面预览、网页操作与视频导出一律走 Chatlo 内置浏览器，不安装任何第三方浏览器，WebM 导出仅用 VP8 / VP9。
-  tags: [HTML, 可视化, 讲解, 图解, 视频, 3b1b, Chatlo, WebKit, WebM, VP8, VP9]
+  summary: "只写一段 Markdown 草稿，技能自带 CLI 就生成一页可视化 HTML 讲解。本文是 Chatlo（iOS，内置 WebKit 浏览器）专项适配版：页面预览、网页操作与视频导出一律走 Chatlo 内置浏览器，不安装任何第三方浏览器，WebM 导出仅用 VP8 / VP9。"
+  tags: "HTML, 可视化, 讲解, 图解, 视频, 3b1b, Chatlo, WebKit, WebM, VP8, VP9"
   agent_created: true
 ---
 

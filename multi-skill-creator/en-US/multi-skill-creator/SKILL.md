@@ -1,6 +1,6 @@
 ---
 name: multi-skill-creator
-description: Create new skills, modify and improve existing skills, and measure skill performance with reproducible evals. Use when users want to build a skill from scratch, edit or optimize an existing skill, run evals to verify a skill actually works, benchmark a skill's value with variance analysis, or optimize a skill description for better triggering accuracy. Reach for it even when the user never says the word "skill" — if the conversation is about packaging a repeatable procedure, script, or reference material into a reusable capability, this skill applies.
+description: Create new skills, modify and improve existing skills, and measure skill performance with reproducible evals. Use when users want to build a skill from scratch, edit or optimize an existing skill, run evals to verify a skill actually works, benchmark a skill's value with variance analysis, or optimize a skill description for better triggering accuracy. Defaults to writing every skill in both Chinese (zh-CN) and English (en-US) unless the user asks for a specific language. Reach for it even when the user never says the word "skill" — if the conversation is about packaging a repeatable procedure, script, or reference material into a reusable capability, this skill applies.
 metadata:
   language: en-US
 ---
@@ -14,7 +14,7 @@ One premise up front: **this skill is not tied to any single vendor, IDE, or CLI
 At a high level, creating a skill goes like this:
 
 - Decide what you want the skill to do and roughly how it should do it
-- Write a draft of the skill
+- Write a draft (bilingual by default: Chinese first, then sync English once verified; only one language when the user asked for one)
 - Create a few test prompts and run an agent-with-access-to-the-skill on them
 - Help the user evaluate the results, both qualitatively and quantitatively
   - While the runs happen in the background, draft some quantitative evals if there aren't any (if there are some, use them as-is or modify what needs changing). Then explain them to the user — or, if they already existed, explain the ones that already exist
@@ -28,6 +28,19 @@ Your job when using this skill is to figure out where the user is in this proces
 Always stay flexible: if the user says "I don't need a pile of evals, just think it through with me", do that instead.
 
 Once the skill is basically done (order stays flexible), you can also run the description improver — a separate script whose only job is improving triggering accuracy.
+
+## Language: Bilingual by Default, User Overrides
+
+**Produce bilingual skills by default**: `zh-CN/<skill-name>/` and `en-US/<skill-name>/`, each independently usable, structured as described in the Bilingual Versions section. Don't stop to ask "Chinese or English?" before starting — unless the user has stated a language preference, go straight to bilingual.
+
+Switch to a single language only when:
+
+- The user names a language ("Chinese only", "English is fine", "do Chinese now, English later"). Do what they said; don't helpfully add a second version they didn't ask for.
+- The user says explicitly that this is internal, throwaway, or not worth maintaining twice.
+
+For a single-language skill, pick the language the same way: the user's choice wins, otherwise follow the language of the conversation — and mention in one line at delivery that only the <language> version exists and the other can be added on request.
+
+Either way, **finish the implementation before translating**. Simplified Chinese is the primary development language: implement, verify, and revise in the Chinese version, then produce the English version from it. Never introduce functionality or behavioral changes independently in the English version.
 
 ## Capture Intent
 
@@ -68,6 +81,8 @@ skill-name/
     ├── references/ - docs loaded into context as needed
     └── assets/     - files used in output (templates, icons, fonts)
 ```
+
+Skills are bilingual by default, so the real deliverable wraps one of these in a language directory — `zh-CN/skill-name/` and `en-US/skill-name/`, each containing the full structure above. See "Bilingual Versions → 1. Language Structure".
 
 #### Progressive Disclosure
 
@@ -204,6 +219,8 @@ Execute this task:
 - **Creating a new skill**: no skill at all. Same prompt, no skill path, saved to `without_skill/run-1/outputs/`
 - **Improving an existing skill**: the old version. Snapshot it before editing (`cp -r <skill-path> <workspace>/skill-snapshot/`, or `Copy-Item -Recurse` on Windows), then point the baseline run at the snapshot, saved to `old_skill/run-1/outputs/`
 
+Bilingual skills: `<path-to-skill>` points at a **specific language directory** (e.g. `zh-CN/<skill-name>`), one language per evaluation run, with test prompts written in that language. Each language gets its own full with-skill/baseline comparison — don't mix them, and don't use the Chinese results to draw conclusions about the English version.
+
 Write an `eval_metadata.json` for each test case (assertions can stay empty for now). Name each eval for what it tests — not just "eval-0". Use that name for the directory too. If this iteration uses new or modified prompts, create these files for every new eval directory; don't assume they carry over from the previous iteration.
 
 ```json
@@ -327,6 +344,8 @@ After improving:
 4. Wait for the user to review and say they're done
 5. Read the new feedback, improve again, repeat
 
+Bilingual skills: iterate in the Chinese version until it's stable, then sync the finalized text to English and **run a separate verification pass on the English version** — translation drifts, so don't let English inherit the Chinese conclusions. Usually one English pass is enough.
+
 Stop when:
 - The user says they're happy
 - The feedback is all empty (everything looks good)
@@ -430,6 +449,8 @@ So eval queries need enough substance that the agent would actually benefit from
 
 Take `best_description` from the JSON output and update the skill's SKILL.md frontmatter. Show the user the before/after and report the scores.
 
+For a bilingual skill, **run this once per language**: the two descriptions are worded differently and trigger differently, so a Chinese `best_description` cannot be translated into the English result. Write the eval queries in the target users' language too — Chinese queries for the zh-CN copy, English for the en-US copy. Running Chinese queries against an English description measures the wrong thing.
+
 ## Package and Present
 
 To hand the user a distributable skill package (only if your environment can give files back to the user; otherwise skip this):
@@ -439,6 +460,8 @@ python -m scripts.package_skill <path/to/skill-folder>
 ```
 
 After packaging, point the user at the resulting `.skill` file so they can install it.
+
+A bilingual skill means **one package per language directory**, keeping the identical output filename apart by directory (e.g. `dist/zh-CN/<skill-name>.skill` and `dist/en-US/<skill-name>.skill`) so one doesn't overwrite the other. Say clearly which package is which language. If the user asked for a single language, package only that one.
 
 ## Adapting to Your Environment
 
@@ -502,7 +525,7 @@ The `references/` directory has additional documentation:
 
 ## Bilingual Versions
 
-This skill follows the bilingual skill-repository rules; both versions are independently usable. What follows covers organization, priority, synchronization, and distribution. Where these rules conflict with the skill-authoring instructions above, **follow the authoring instructions for skill implementation** while preserving the bilingual requirements below.
+This skill follows the bilingual skill-repository rules, and **bilingual is the default output** (see "Language: Bilingual by Default, User Overrides" above); both versions are independently usable. What follows covers organization, priority, synchronization, and distribution. Where these rules conflict with the skill-authoring instructions above, **follow the authoring instructions for skill implementation** while preserving the bilingual requirements below.
 
 ### 1. Language Structure
 
@@ -525,8 +548,6 @@ skill-name/
 │       └── assets/
 │
 ├── README.md
-├── LICENSE
-└── .gitignore
 ```
 
 - `zh-CN/`: Simplified Chinese version.
@@ -534,6 +555,7 @@ skill-name/
 - Both language directories MUST contain an independently usable skill.
 - Both versions MUST use the same skill name.
 - Optional directories SHOULD only be created when needed.
+- Do **not** generate `LICENSE` or `.gitignore` for a skill. A skill is a capability package; licensing and ignore rules belong at the repository level, and dropping them into every skill directory just pollutes the install artifact. Add them only when the user explicitly asks.
 
 ### 2. Development Priority
 
@@ -555,6 +577,8 @@ The two language versions MUST maintain functional and behavioral consistency.
 - Any functional change to the Chinese version MUST trigger an English synchronization review.
 - Bug fixes and security updates MUST be reflected in both versions.
 - Never silently remove or weaken requirements during translation.
+
+Evaluate per language as well: write test prompts in the target users' language, and treat results as valid only for that language version. A Chinese pass rate says nothing about the English version — real phrasing, terminology, and edge cases differ. Functional assertions (file structure, field names, script behavior) can usually be shared across both; qualitative feedback and trigger evals must not be.
 
 ### 4. Metadata and Versioning
 
@@ -587,6 +611,7 @@ Both versions MUST use the same version number when version metadata is maintain
 - All resource references MUST use paths relative to the corresponding skill directory.
 - Do not require users to download both language versions.
 - Do not duplicate shared functional dependencies outside the individual skill directories.
+- Do not put repository-level files such as `LICENSE` or `.gitignore` inside a skill directory — they play no part in running the skill and only clutter the install artifact.
 
 ### 6. README and Publishing
 
@@ -609,13 +634,13 @@ When conflicts arise, follow the dedicated skill-authoring instructions for skil
 Repeating the core loop once more for emphasis:
 
 - Figure out what the skill is about
-- Draft or edit the skill
+- Draft or edit the skill (bilingual by default; the language the user asked for when they asked)
 - Run an agent-with-the-skill on the test prompts
 - With the user, evaluate the outputs:
   - Generate `benchmark.json` and run `eval-viewer/generate_review.py` so the human can review
   - Run the quantitative evals
 - Repeat until you and the user are satisfied
-- Package the final skill and hand it to the user
+- Sync both language versions, package the final skill, and hand it to the user
 
 If you have a TodoList or similar, add these steps to it so nothing gets lost.
 

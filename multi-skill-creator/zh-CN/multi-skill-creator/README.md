@@ -35,6 +35,10 @@
 6. 按反馈重写，再跑一轮
 7. 用 20 条查询自动优化描述，减少该触发却不触发
 
+## 语言
+
+**默认做成中英双语**：`zh-CN/<skill-name>/` 和 `en-US/<skill-name>/` 两份，各自独立可用。**先做**中文版，验证通过后同步英文版。想只做一种语言就直接说（"只要中文"、"英文就行"），技能会照办，不会多塞一版。
+
 ## 手动跑脚本
 
 所有命令都在**本目录**内执行：
@@ -77,4 +81,4 @@ python -m scripts.package_skill ../my-skill
 
 ## 许可
 
-Apache License 2.0，见 [LICENSE](LICENSE)。派生自 anthropics/skills 的 `skill-creator`。
+Apache License 2.0。派生自 anthropics/skills 的 `skill-creator`。

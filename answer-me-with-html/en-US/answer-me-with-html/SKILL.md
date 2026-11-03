@@ -16,8 +16,8 @@ metadata:
   display_name: Answer me with HTML (Chatlo adaptation)
   display_name_en: Answer me with HTML
   version: 1.0.0
-  summary: Write one short Markdown draft and the bundled CLI builds a one-page visual HTML explainer. This is the Chatlo (iOS, built-in WebKit browser) adaptation: page preview, web operations and video export all go through Chatlo's built-in browser, no third-party browser is installed, and WebM export uses VP8 / VP9 only.
-  tags: [HTML, visualization, explainer, diagram, video, 3b1b, Chatlo, WebKit, WebM, VP8, VP9]
+  summary: "Write one short Markdown draft and the bundled CLI builds a one-page visual HTML explainer. This is the Chatlo (iOS, built-in WebKit browser) adaptation: page preview, web operations and video export all go through Chatlo's built-in browser, no third-party browser is installed, and WebM export uses VP8 / VP9 only."
+  tags: "HTML, visualization, explainer, diagram, video, 3b1b, Chatlo, WebKit, WebM, VP8, VP9"
   agent_created: true
 ---
 

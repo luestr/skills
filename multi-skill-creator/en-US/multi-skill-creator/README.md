@@ -35,6 +35,10 @@ Once installed, "I want to make a skill for X" is enough to start. The skill fir
 6. Rewrite from the feedback, then run another iteration
 7. Optimize the description against ~20 queries to reduce undertriggering
 
+## Language
+
+**Bilingual (Chinese + English) by default**: `zh-CN/<skill-name>/` and `en-US/<skill-name>/`, each independently usable. The Chinese version is built and verified first, then the English version follows from it. Want a single language? Just say so ("Chinese only", "English is fine") and the skill will honor it without adding a second version.
+
 ## Running the scripts by hand
 
 All commands run from **this directory**:
@@ -77,4 +81,4 @@ For per-CLI differences, where the probe skill gets installed, and why plain-tex
 
 ## License
 
-Apache License 2.0 — see [LICENSE](LICENSE). Derived from `skill-creator` in anthropics/skills.
+Apache License 2.0. Derived from `skill-creator` in anthropics/skills.
