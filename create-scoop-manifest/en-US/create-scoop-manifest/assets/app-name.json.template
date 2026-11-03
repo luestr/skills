@@ -1,0 +1,60 @@
+{
+    "##": "Official ordering from BucketTemplate's bucket/app-name.json.template plus CONTRIBUTING.md. Fill the blanks, delete what does not apply, and follow this key order. Indent with 4 spaces, write single-element arrays as plain strings, and never leave a hash empty.",
+    "version": "",
+    "description": "",
+    "homepage": "",
+    "license": "",
+    "notes": "",
+    "depends": "",
+    "suggest": {},
+    "architecture": {
+        "64bit": {
+            "url": "",
+            "hash": ""
+        },
+        "arm64": {
+            "url": "",
+            "hash": ""
+        },
+        "32bit": {
+            "url": "",
+            "hash": ""
+        }
+    },
+    "extract_dir": "",
+    "extract_to": "",
+    "pre_install": "",
+    "installer": {
+        "script": ""
+    },
+    "post_install": "",
+    "env_add_path": "",
+    "env_set": {},
+    "bin": "",
+    "shortcuts": [],
+    "persist": "",
+    "pre_uninstall": "",
+    "uninstaller": {
+        "script": ""
+    },
+    "post_uninstall": "",
+    "checkver": {
+        "github": ""
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": ""
+            },
+            "arm64": {
+                "url": ""
+            },
+            "32bit": {
+                "url": ""
+            }
+        },
+        "hash": {
+            "url": ""
+        }
+    }
+}
