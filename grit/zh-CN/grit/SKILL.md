@@ -1,5 +1,5 @@
 ---
-name: grit-zh
+name: grit
 description: 在 Git 仓库中使用 grit CLI 做版本控制——status、diff、提交、分支、合并、cherry-pick、revert、fetch/pull/push 与标签——并为脚本和 Agent 提供 JSON 输出。当任务涉及提交、建分支、与远程同步或读取历史，且环境中安装了 `grit` 时使用。
 metadata:
   language: zh-CN
